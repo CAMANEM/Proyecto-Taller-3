@@ -44,6 +44,7 @@ class Main:
         self.Window()
         self.registro = Registro()
         self.Window()
+        print("hola")
         print("\n\n\n",self.registro, "\n\n\n")
     
     def Window(self):
