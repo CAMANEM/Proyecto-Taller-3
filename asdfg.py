@@ -1,12 +1,11 @@
-import tkinter
 import cv2
-import threading
 guardado = False
 
 user = "lucho el del cartucho bb"
 
 class Registro:
     def __init__(self):
+        self.Recognition()
         self.saved = False
     
     def Recognition(self):
@@ -35,35 +34,7 @@ class Registro:
     def Capture(self):
         self.guardado = True
         cv2.imwrite("./files/faceRecognitionFiles/dont try this at home/"+user+".jpg", self.img)
-    
     def ReturnImg(self):
         return self.img
 
-class Main:
-    def __init__(self):
-        self.Window()
-        self.registro = Registro()
-        self.Window()
-        print("\n\n\n",self.registro, "\n\n\n")
-    
-    def Window(self):
-        tkinter.Tk().wm_withdraw()
-        self.Login()
-
-    def Login(self):
-
-        win = tkinter.Toplevel()
-        win.geometry("500x650+400+50")
-
-        hiloRegistro = threading.Thread(target=self.registro.Recognition)
-        hiloRegistro.daemon = True
-        hiloRegistro.start()
-
-        canvas = Canvas(win, width=500, height=650)
-
-        canvas.create_image(0,0,image=self.img)
-        
-        win.protocol("WM_DELETE_WINDOW", exit)
-        win.mainloop()
-
-Main()
+Registro()

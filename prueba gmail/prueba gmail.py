@@ -2,7 +2,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from smtplib import SMTP
 mensaje = MIMEMultipart("plain")
-mensaje["From"]="proyecto3DavidsCoorpos@gmail.com"
+mensaje["From"]="asd@yopmail.com"
 mensaje["To"]= "lujimenez2000@gmail.com"
 mensaje["Subject"] ="Correo de prueba desde Python 3"
 adjunto = MIMEBase("application","octect-stream")
