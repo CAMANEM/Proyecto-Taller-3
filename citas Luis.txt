@@ -1,0 +1,2 @@
+biblioteca face_recognition: https://pypi.org/project/face-recognition/
+opencv: https://pypi.org/project/opencv-python/
