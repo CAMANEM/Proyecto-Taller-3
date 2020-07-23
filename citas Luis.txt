@@ -1,2 +1,3 @@
 biblioteca face_recognition: https://pypi.org/project/face-recognition/
 opencv: https://pypi.org/project/opencv-python/
+guardar encodings de face_recognition: https://github.com/ageitgey/face_recognition/wiki/How-do-I-save-face-encodings-to-a-file%3F
