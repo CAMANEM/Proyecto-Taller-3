@@ -1,5 +1,5 @@
-from Encodings import Encoders
+import encoder
 
-#Encoders.Saver(Encoders.Encoder())
+#encoder.Encode.Saver(encoder.Encode.Encoder())
 
-print(Encoders.Loader())
+print(encoder.Encode("Loader"))

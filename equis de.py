@@ -1,3 +1,3 @@
-from recognition import Registro
+from recognition import Login
 
-Registro()
+Login()
