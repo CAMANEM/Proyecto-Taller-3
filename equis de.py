@@ -1,3 +1,5 @@
-from recognition import Login
+from recognition import camara
 
-Login()
+camara.RegistrarCara("Carlos Alvarado")
+
+#camara.InicioSesion()

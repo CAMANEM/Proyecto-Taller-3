@@ -1,5 +1,5 @@
 import encoder
 
 #encoder.Encode.Saver(encoder.Encode.Encoder())
-
-print(encoder.Encode("Loader"))
+jueputa=encoder.Encode()
+print(jueputa.Loader())

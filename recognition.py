@@ -3,47 +3,61 @@ import face_recognition
 import time
 import threading
 import tkinter
-from encoder import Encode
+from PIL import Image, ImageTk
+from encoder import encode
 
-class Login:
+class Camara:
     def __init__(self):
         
         self.saved = False
-        self.faceOnScreen = False
-        self.logueado = False
         self.user = ""
         self.recognized = False
         self.hiloIniciado = False
         self.breaked = False
-        self.faceEncodings = Encode("Loader")
-        self.hiloReconocimiento = threading.Thread(target=self.Recognition())
-        self.hiloReconocimiento.daemon = True
-        self.hiloReconocimiento.start()
-
-        if self.hiloIniciado: self.Pantalla()
-    
-    def Recognition(self):
+        self.faceEncodings = encode.Loader()
+        
+    def InicioSesion(self):
 
         cap = cv2.VideoCapture(0)
 
-        while self.logueado:
-            #start=time.time()
-            ret, self.img = cap.read()
-            self.hiloIniciado = True
-            gray = cv2.cvtColor(self.img, cv2.COLOR_BGR2GRAY)
+        #threading.Thread(target=self.Pantalla()).start()
+        
+        tiempoEjecutando = 0
+        print("iniciado el reconocimiento")
 
+        while tiempoEjecutando < 15:
+            start=time.time()
+            ret, img = cap.read()
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+            cv2.imshow('Reconociendo...', img)
+            
             try:
-                unknown_encoding = face_recognition.face_encodings(self.img)[0]
-                for face_encoding in self.faceEncodings:
-                    if face_recognition.compare_faces([face_encoding[0]], unknown_encoding)[0]:
-                        self.user = face_encoding[1]
+                noIdentificado = face_recognition.face_encodings(img)[0]
+                for faceEncoding in self.faceEncodings:
+                    if self.recognized:  break
+                    if face_recognition.compare_faces([faceEncoding[0]], noIdentificado)[0]:
+                        self.user = faceEncoding[1]
                         print ("Bienvenido: ", self.user)
+
+                        tiempoEjecutando = 10.0
                         
                         self.recognized = True
             except:
                 pass
-            return
+            if cv2.waitKey(1) & 0xFF == ord('q'):
+                break
 
+            tiempoEjecutando += round(time.time()-start, 2)
+
+        if not self.recognized:
+            print("usuario no reconocido, intente de nuevo")
+
+        return [self.recognized, self.user]
+            
+        cap.release()
+        cv2.destroyAllWindows()
+            
     def Capture(self):
         cv2.imwrite("./files/faceRecognitionFiles/dont try this at home/"+user+".jpg", self.img)
 
@@ -53,19 +67,57 @@ class Login:
     def MostrarCara(self,tiempo):
         if tiempo >= 15 or self.recognized:
             return
-        self.canvas.create_image(0,0, image=self.img)
+        #elif not self.hiloIniciado:
+        #    return self.MostrarCara(tiempo)
+        try:
+            self.canvas.create_image(0,0, image=self.tkinterImage, anchor=NW)
+        except:
+            print("esta picha no sirve, bote esto")
         time.sleep(0.1)
-        self.MostrarCara(tiempo+0.1)
-
-    def Pantalla(self):
-        tkinter.Tk().wm_withdraw()
-        vent = tkinter.Toplevel()
-        vent.geometry("640x550+350+200")
-        vent.rezisable(False,False)
-        self.canvas = tkinter.Canvas(vent, width=640, height=550, bg="white")
-        threading.Thread(target=self.MostrarCara, args=[0])
-
         self.canvas.update()
-        vent.mainloop()
+        print("hijueputa puta")
+        return self.MostrarCara(tiempo+0.1)
 
-Login()
+    def RegistrarCara(self, user):
+        self.user = user
+        cap = cv2.VideoCapture(0)
+        tiempo = 0
+
+        cascade = cv2.CascadeClassifier('./files/haarcascade_frontalface_default.xml')
+
+
+        while tiempo < 60:
+            start=time.time()
+            ret, img = cap.read()
+            gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+            
+            faces = cascade.detectMultiScale(gray, 1.3, 5)
+
+            lenFaces = len(faces)
+
+            if cv2.waitKey(1) == 13 and lenFaces and not self.saved:
+                #threading.Thread(target=encode.Encoder([img],[self.user]))
+                self.saved = True
+                tiempo = 58
+
+            if lenFaces == 0:
+                cv2.putText(img, "No se detectan caras", (100,30), cv2.FONT_ITALIC, 1, (0, 80, 200, 255), 2) 
+            
+            else:
+                cv2.putText(img, "Cara detectada, enter para registrar", (10,30), cv2.FONT_ITALIC, 1, (0, 80, 200, 255), 2) 
+
+            if self.saved:
+                cv2.putText(img, "Registro satisfactorio", (120,450), cv2.FONT_ITALIC, 1, (0, 80, 200, 255), 2) 
+
+            print("hay ", lenFaces, " caras en pantalla")
+            cv2.imshow('Buscando rostro para registrar', img)
+
+            tiempo += time.time() - start
+
+            if cv2.waitKey(1) == 27:
+                break
+
+        cap.release()
+        cv2.destroyAllWindows()
+        
+camara = Camara()
