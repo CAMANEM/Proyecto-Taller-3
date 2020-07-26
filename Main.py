@@ -12,7 +12,12 @@ class Menu():
 
         self.ventana = ventana
         self.canvas = canvas
+        self.ventana.bind("<Key>", self.Tecla)
         self.MenuLogin()
+
+    def Tecla(self, event):
+        if event.char == 'h':
+            self.Menu()
 
     def MenuLogin(self):
 
@@ -29,7 +34,7 @@ class Menu():
     def LoginReconocer(self):
         datosLogin = camara.InicioSesion()
         if datosLogin[0]:
-            self.usuairo = datosLogin[1]
+            self.usuario = datosLogin[1]
             self.Menu()
 
     def Login(self):
@@ -43,6 +48,12 @@ class Menu():
         
         Foto = Button(self.canvas,text = "MENU",bg = "black",fg = "gold", command = self.Menu)
         Foto.place(x=500,y=490)
+
+    def RegistroDeCara(self):
+        datosRegistro = camara.RegistrarCara()
+        if datosRegistro[0]:
+            self.usuario = datosRegistro[1]
+            self.Menu()
 
     def Registro(self):
 
@@ -72,8 +83,12 @@ class Menu():
         self.canvas = Canvas(self.ventana, width=755, height=600,bg= "White",highlightbackground="White") 
         self.canvas.place(x=-5, y=0)
 
+
         C_botones = Canvas(self.canvas,bg= "White",highlightbackground="White")
         C_botones.place(x=250,y=200)
+
+        Nombre = Label(C_botones, text = "Bienvenido, " + self.usuario, bg="white",fg = "black",font=("fixedsys"))
+        Nombre.place(x=100, y=30)
 
         C_factura = Button(C_botones,text = "REALIZAR FACTURA",bg = "aquamarine",fg = "black", command = self.RealizarFactura)
         C_factura.grid(row=0,column = 0,padx = 5, pady = 5)

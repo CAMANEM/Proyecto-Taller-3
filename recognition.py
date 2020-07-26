@@ -27,8 +27,6 @@ class Camara:
             ret, img = cap.read()
 
             cv2.imshow('Reconociendo...', img)
-
-            print(len(self.faceEncodings[0]))
             
             try:
                 noIdentificado = face_recognition.face_encodings(img)[0]
@@ -56,13 +54,11 @@ class Camara:
 
         return [self.recognized, self.user]
             
-        
-            
     def Capture(self):
         cv2.imwrite("./files/faceRecognitionFiles/dont try this at home/"+user+".jpg", self.img)
 
     def RegistrarCara(self, user):
-        self.user = user
+        
         cap = cv2.VideoCapture(0)
         tiempo = 0
 
@@ -80,6 +76,7 @@ class Camara:
             if cv2.waitKey(1) == 13 and lenFaces and not self.saved:
                 #threading.Thread(target=encode.Encoder([img],[self.user]))
                 self.saved = True
+                self.user = user
                 tiempo = 58
 
             cv2.putText(img, "Mantenga escape para salir", (10,400), cv2.FONT_ITALIC, 1, (0, 0, 200, 255), 2) 
@@ -103,5 +100,6 @@ class Camara:
 
         cap.release()
         cv2.destroyAllWindows()
+        return [self.saved, self.user]
         
 camara = Camara()
