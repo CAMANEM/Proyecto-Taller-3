@@ -1,5 +1,6 @@
 import face_recognition
 import pickle
+import json
 import cv2
 import numpy as np
 import os
@@ -11,38 +12,44 @@ class Encode:
 
     def Saver(self, faceEncodings):
         try:
-            os.remove('files/faces_data.dat')
+            os.remove('files/datos de caras.dat')
         except FileNotFoundError:
             pass
-        with open('files/faces_data.dat', 'wb') as f:
+        with open('files/datos de caras.dat', 'wb') as f:
             pickle.dump(faceEncodings, f)
         print("guardado")
 
     def Loader(self):
         try:
-            with open('files/faces_data.dat', 'rb') as f:
-	            encodings = pickle.load(f)
-            faceEncodings = np.array(encodings)
+            with open('files/datos de caras.dat', 'rb') as f:
+	            faceEncodings = pickle.load(f)
+            #faceEncodings = np.array(encodings)
         except FileNotFoundError:
             faceEncodings = [[],[]]
         print("cargado")
             
-        
+
         return faceEncodings
 
     def Encoder(self, imgCaras = [], nombres = []):
         try:
             faceEncodings = self.Loader()
         except FileNotFoundError:
+            print("cargando lista vacía")
             faceEncodings = [[],[]]
+
+        listaCaras = faceEncodings[0]
+        listaNombres = faceEncodings[1]
         
         if len(imgCaras) == len(nombres):
             for i in range(len(nombres)):
 
-                faceEncodings += [face_recognition.face_encodings(imgCaras[i])[0], [nombres[i]]]
-
-                #faceEncodings[0] = faceEncodings[0] + [face_recognition.face_encodings(imgCaras[i])[0]]
-                #faceEncodings[1] = faceEncodings[1] + [nombres[i]]
+                for nombre in listaNombres:
+                    if nombre == nombres[i]:
+                        return "existe un usuario con estos mismos datos"
+                print("antes de añadir datos")
+                faceEncodings[0] += [np.array(face_recognition.face_encodings(imgCaras[i])[0])]
+                faceEncodings[1] += [nombres[i]]
 
         else:
             print("inconsistencias en datos enviados a Encoder()")
@@ -52,10 +59,7 @@ class Encode:
 
         self.Saver(faceEncodings)
 
-        return faceEncodings
+        return "registro completo"
         
 
 encode = Encode()
-
-hijueputa = Encode()
-#hijueputa.Encoder([cv2.imread("./files/faceRecognitionFiles/luis.jpg"), cv2.imread("./files/faceRecognitionFiles/david.jpg")], ["Luis", "David"])

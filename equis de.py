@@ -1,5 +1,5 @@
 from recognition import camara
 
-camara.RegistrarCara("Carlos Alvarado")
+#camara.RegistrarCara("Carlos Alvarado")
 
-#camara.InicioSesion()
+camara.InicioSesion()

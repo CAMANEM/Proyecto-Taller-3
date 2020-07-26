@@ -1,5 +1,6 @@
-import encoder
+from encoder import encode
+import cv2
 
-#encoder.Encode.Saver(encoder.Encode.Encoder())
-jueputa=encoder.Encode()
-print(jueputa.Loader())
+#encode.Encoder()
+#print(encode.Loader())
+encode.Encoder([cv2.imread("./files/faceRecognitionFiles/luis.jpg"), cv2.imread("./files/faceRecognitionFiles/david.jpg")], ["Luis", "David"])
