@@ -1,63 +1,55 @@
 import face_recognition
 import pickle
-import json
 import cv2
 import numpy as np
 import os
 
 class Encode:
 
-    def __init__(self, accion=None, parametros=None):
+    def __init__(self):
         pass
 
     def Saver(self, faceEncodings):
+        """Guarda los datos de los usuarios en un archivo .dat"""
+
         try:
-            os.remove('files/datos de caras.dat')
-        except FileNotFoundError:
+            os.remove('files/datos de caras.dat') # borra el archivo en caso de contener algún error
+        except FileNotFoundError: # en caso de que no exista el archivo, saltar a la siguiente instrucción
             pass
-        with open('files/datos de caras.dat', 'wb') as f:
-            pickle.dump(faceEncodings, f)
-        print("guardado")
+        with open('files/datos de caras.dat', 'wb') as f: # almacena los datos en disco
+            pickle.dump(faceEncodings, f) # guarda usando pickle
 
     def Loader(self):
-        try:
-            with open('files/datos de caras.dat', 'rb') as f:
-	            faceEncodings = pickle.load(f)
-            #faceEncodings = np.array(encodings)
-        except FileNotFoundError:
-            faceEncodings = [[],[]]
-        print("cargado")
-            
+        """Carga los datos de los usuarios desde el almacenamiento"""
 
+        try:
+            with open('files/datos de caras.dat', 'rb') as f: # los lee
+	            faceEncodings = pickle.load(f) # lee usando pickle
+            
+        except FileNotFoundError: # si el archivo no existe
+            faceEncodings = [] # no hay datos, por tanto, se retorna una lista vacía
+            
         return faceEncodings
 
     def Encoder(self, imgCaras = [], nombres = []):
-        try:
-            faceEncodings = self.Loader()
-        except FileNotFoundError:
-            print("cargando lista vacía")
-            faceEncodings = [[],[]]
+        """Codifica las caras como datos útiles para el reconocimiento, a parit de imágenes. Además, almacena los nombres relacionados con esa cara"""
 
-        listaCaras = faceEncodings[0]
-        listaNombres = faceEncodings[1]
+        faceEncodings = self.Loader() # carga los datos usando Loader()
         
-        if len(imgCaras) == len(nombres):
-            for i in range(len(nombres)):
+        if len(imgCaras) == len(nombres): # si los datos son precisos, es decir, existe la misma cantidad de imágenes que de nombres
 
-                for nombre in listaNombres:
-                    if nombre == nombres[i]:
-                        return "existe un usuario con estos mismos datos"
-                print("antes de añadir datos")
-                faceEncodings[0] += [np.array(face_recognition.face_encodings(imgCaras[i])[0])]
-                faceEncodings[1] += [nombres[i]]
+            for i in range(len(nombres)): 
 
-        else:
-            print("inconsistencias en datos enviados a Encoder()")
-            return
+                for nombre in nombres:
+                    try:
+                        if nombre == faceEncodings[i][1]: # si ya existe un usuario con el mismo nombre
+                            return "existe un usuario con el mismo nombre" # indica que ya existe
+                    except:
+                        pass
 
-        print("codificado")
+                faceEncodings += [[np.array(face_recognition.face_encodings(imgCaras[i])), nombres[i]]] # almacena los nuevos datos
 
-        self.Saver(faceEncodings)
+        self.Saver(faceEncodings) # almacena los datos codificados
 
         return "registro completo"
         

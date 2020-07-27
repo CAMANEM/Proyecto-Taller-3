@@ -49,11 +49,13 @@ class Menu():
         Foto = Button(self.canvas,text = "MENU",bg = "black",fg = "gold", command = self.Menu)
         Foto.place(x=500,y=490)
 
-    def RegistroDeCara(self):
-        datosRegistro = camara.RegistrarCara()
+    def RegistroDeCara(self, nombre):
+        print(nombre)
+        datosRegistro = camara.RegistrarCara(nombre)
         if datosRegistro[0]:
             self.usuario = datosRegistro[1]
-            self.Menu()
+            print(self.usuario)
+            self.MenuLogin()
 
     def Registro(self):
 
@@ -73,7 +75,7 @@ class Menu():
         E_nombre = Entry(C_datos,bg = "aquamarine",fg = "black",font=("fixedsys"))
         E_nombre.grid(row=0,column = 1)
         
-        foto = Button(self.canvas,text = "Tomar Foto",bg = "aquamarine",fg = "black", command = camara.RegistrarCara)
+        foto = Button(self.canvas,text = "Tomar Foto",bg = "aquamarine",fg = "black", command = lambda: self.RegistroDeCara(E_nombre.get()))
         foto.place(x=330,y=300)
 
     def Menu(self):
