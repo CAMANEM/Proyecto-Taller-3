@@ -53,5 +53,4 @@ class Encode:
 
         return "registro completo"
         
-
-encode = Encode()
+encode = Encode() # crea una instancia para llamar desde otros .py
