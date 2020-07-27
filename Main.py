@@ -12,12 +12,9 @@ class Menu():
 
         self.ventana = ventana
         self.canvas = canvas
-        self.ventana.bind("<Key>", self.Tecla)
+        self.ventana.bind("<F3>", lambda event: self.Menu())
+        self.usuario = ""
         self.MenuLogin()
-
-    def Tecla(self, event):
-        if event.char == 'h':
-            self.Menu()
 
     def MenuLogin(self):
 
@@ -89,8 +86,7 @@ class Menu():
         C_botones = Canvas(self.canvas,bg= "White",highlightbackground="White")
         C_botones.place(x=250,y=200)
 
-        Nombre = Label(C_botones, text = "Bienvenido, " + self.usuario, bg="white",fg = "black",font=("fixedsys"))
-        Nombre.place(x=100, y=30)
+        Label(self.ventana, text = "Bienvenido, " + self.usuario, bg="white",fg = "black",font=("fixedsys")).place(x=0, y=0)
 
         C_factura = Button(C_botones,text = "REALIZAR FACTURA",bg = "aquamarine",fg = "black", command = self.RealizarFactura)
         C_factura.grid(row=0,column = 0,padx = 5, pady = 5)
