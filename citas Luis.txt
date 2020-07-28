@@ -4,3 +4,9 @@ guardar encodings de face_recognition: https://github.com/ageitgey/face_recognit
 dibujar en tkinter: http://zetcode.com/tkinter/drawing/
 borrar archivos desde python: https://www.dummies.com/programming/python/how-to-delete-a-file-in-python/
 texto en opencv: https://pythonexamples.org/python-opencv-write-text-on-image-puttext/#:~:text=To%20write%20text%20on%20image,provided%20in%20the%20following%20example.&text=image%20on%20which%20you%20can,want%20to%20write%20on%20image.
+obtener datos actuales de fecha: https://docs.python.org/3/library/time.html#time.struct_time
+cascades para caras: https://pythonprogramming.net/haar-cascade-face-eye-detection-python-opencv-tutorial/
+
+
+
+*****dibujar en tkinter: http://zetcode.com/tkinter/drawing/
