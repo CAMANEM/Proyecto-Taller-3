@@ -1,5 +1,5 @@
-#from Servicios import servicios
-#from Generador_Factura_PDF import Factura
+from Servicios import servicios
+from Generador_Factura_PDF import Factura
 from reconocimiento import camara
 from tkinter import *
 import os

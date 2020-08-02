@@ -46,14 +46,12 @@ class Camara:
                         reconocido = True # indica que se detectó la cara
             except:
                 pass
+            print("duante el bucle, reconocido es ", reconocido)
 
             if cv2.waitKey(1) == 27: # cierra la ventana forzosamente cuando se presione la tecla 'Esc'
                 break
 
             tiempoEjecutando += round(time.time()-start, 2) # compara la hora de inicio y la actual, con el fin de definir el tiempo de ejecución
-
-        if not reconocido: # una vez roto el bucle, si no se reconoció a nadie, indicará que no se hallaron rostros
-            return "usuario no reconocido, intente de nuevo"
 
         cap.release() # libera la cámara web para otros usos
         cv2.destroyAllWindows() # elimina todas las ventanas
