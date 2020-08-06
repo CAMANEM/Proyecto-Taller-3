@@ -1,0 +1,43 @@
+{
+ "Proximo_ID": "8",
+ "Servicios a facturar": [],
+ "ID_existentes": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7"
+ ],
+ "Servicios": {
+  "1": {
+   "descripcion": "Tencha2",
+   "costo": "10"
+  },
+  "2": {
+   "descripcion": "Valer verga",
+   "costo": "567"
+  },
+  "3": {
+   "descripcion": "Hacer comida",
+   "costo": "2000"
+  },
+  "4": {
+   "descripcion": "Caviar Express",
+   "costo": "1222333444"
+  },
+  "5": {
+   "descripcion": "Control de plagas",
+   "costo": "7000"
+  },
+  "6": {
+   "descripcion": "Cortar u\u00f1as",
+   "costo": "25000"
+  },
+  "7": {
+   "descripcion": "Suicidaci\u00f3n",
+   "costo": "0"
+  }
+ }
+}

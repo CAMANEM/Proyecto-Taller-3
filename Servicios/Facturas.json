@@ -1,0 +1,639 @@
+{
+ "N\u00b0_Factura": "16",
+ "Facturas": [
+  {
+   "N\u00b0_Factura": "4",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "a",
+   "Cedula": "a",
+   "Direccion": "a",
+   "Correo": "a",
+   "Servicios": [
+    {
+     "ID": "1",
+     "tipo": "Tencha2",
+     "cant": "1"
+    }
+   ],
+   "Costos": {
+    "Proximo_ID": "6",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     }
+    }
+   },
+   "Subtotal": 10,
+   "Total": 8.7
+  },
+  {
+   "N\u00b0_Factura": "5",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "a",
+   "Cedula": "a",
+   "Direccion": "a",
+   "Correo": "a",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "6",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "6",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "b",
+   "Cedula": "b",
+   "Direccion": "b",
+   "Correo": "b",
+   "Servicios": [
+    {
+     "ID": "1",
+     "tipo": "Tencha2",
+     "cant": "1"
+    }
+   ],
+   "Costos": {
+    "Proximo_ID": "6",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     }
+    }
+   },
+   "Subtotal": 10,
+   "Total": 8.7
+  },
+  {
+   "N\u00b0_Factura": "7",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "b",
+   "Cedula": "b",
+   "Direccion": "b",
+   "Correo": "b",
+   "Servicios": [
+    {
+     "ID": "2",
+     "tipo": "Valer verga",
+     "cant": "1"
+    }
+   ],
+   "Costos": {
+    "Proximo_ID": "6",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "1690"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "95823"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "338000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "206574352036"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "1183000"
+     }
+    }
+   },
+   "Subtotal": 95823,
+   "Total": 83366.01
+  },
+  {
+   "N\u00b0_Factura": "8",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Sara Delgado",
+   "Cedula": "120080501",
+   "Direccion": "Puriscal",
+   "Correo": "saradel@gmail.com",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "7",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "9",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Sara Delgado",
+   "Cedula": "120080501",
+   "Direccion": "Puriscal",
+   "Correo": "saradel@gmail.com",
+   "Servicios": [
+    {
+     "ID": "4",
+     "tipo": "Caviar Express",
+     "cant": "25"
+    }
+   ],
+   "Costos": {
+    "Proximo_ID": "7",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     }
+    }
+   },
+   "Subtotal": 30558336100,
+   "Total": 26585752407.0
+  },
+  {
+   "N\u00b0_Factura": "10",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Suputamadre",
+   "Cedula": "6354",
+   "Direccion": "Donde putas le importe",
+   "Correo": "laconchadesuhermana@correocaliente.con",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "8",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     },
+     "7": {
+      "descripcion": "Suicidaci\u00f3n",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "11",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Suputamadre",
+   "Cedula": "6354",
+   "Direccion": "Donde putas le importe",
+   "Correo": "laconchadesuhermana@correocaliente.con",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "8",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     },
+     "7": {
+      "descripcion": "Suicidaci\u00f3n",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "12",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Suputamadre",
+   "Cedula": "6354",
+   "Direccion": "Donde putas le importe",
+   "Correo": "laconchadesuhermana@correocaliente.con",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "8",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     },
+     "7": {
+      "descripcion": "Suicidaci\u00f3n",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "13",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Suputamadre",
+   "Cedula": "6354",
+   "Direccion": "Donde putas le importe",
+   "Correo": "laconchadesuhermana@correocaliente.con",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "8",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     },
+     "7": {
+      "descripcion": "Suicidaci\u00f3n",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "14",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Suputamadre",
+   "Cedula": "6354",
+   "Direccion": "Donde putas le importe",
+   "Correo": "laconchadesuhermana@correocaliente.con",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "8",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     },
+     "7": {
+      "descripcion": "Suicidaci\u00f3n",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  },
+  {
+   "N\u00b0_Factura": "15",
+   "Fecha": "01/08/2020",
+   "Vencimiento": "04/08/2020",
+   "Cliente": "Suputamadre",
+   "Cedula": "6354",
+   "Direccion": "Donde putas le importe",
+   "Correo": "laconchadesuhermana@correocaliente.con",
+   "Servicios": [],
+   "Costos": {
+    "Proximo_ID": "8",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "10"
+     },
+     "2": {
+      "descripcion": "Valer verga",
+      "costo": "567"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "2000"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "1222333444"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "7000"
+     },
+     "6": {
+      "descripcion": "Cortar u\u00f1as",
+      "costo": "25000"
+     },
+     "7": {
+      "descripcion": "Suicidaci\u00f3n",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0.0
+  }
+ ]
+}
