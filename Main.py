@@ -2,9 +2,10 @@ from Generador_Factura_PDF import Cambio_Moneda
 from Generador_Factura_PDF import Factura
 from Administrar_Facturas import Facturas
 from tipo_de_cambio import tipoDeCambio
-from reconocimiento import camara
+#from reconocimiento import camara
 from Servicios import servicios
 from tkinter import messagebox
+from EnviaCorreo import Correo
 import tkinter.ttk as ttk
 from tkinter import *
 import os
@@ -122,6 +123,8 @@ class Menu():
 
         TipoCambio = Button(C_botones, text="Tipo Cambio", bg="medium turquoise", fg="black", font=("fixedsys", "20"),width = 18, command=self.TipoCambio)
         TipoCambio.grid(row=3, column=1,padx = 15, pady = 15)
+        TipoCambio = Button(C_botones, text="Enviar Correo", bg="medium turquoise", fg="black", font=("fixedsys", "20"), width=18, command=  self.EnviarCorreo)
+        TipoCambio.grid(row=4, column=0, padx=15, pady=15)
 
 
     def TipoCambio(self):
@@ -159,8 +162,17 @@ class Menu():
                 print(tabla.item(self.seleccion[0])['values'][0])
                 return(str(tabla.item(self.seleccion[0])['values'][0]))
 
+        # Realiza el cambio a todas las facturas
+        def Cambiar_Todas():
+            valor_cambio = tipoDeCambio.ObtenerTipoDeCambio()
+            for dato in datos:  #  Llama a la función de conversión con cada factura en la base de datos
+                Cambio_Moneda(valor_cambio, dato[0])  # dato[0] retorna los numeros de facturas en la base de datos
+
         B_cambio = Button(self.canvas, text="RELIZAR CAMBIO DE MONEDA", bg="cyan3", fg="black", command=lambda: Cambio_Moneda(tipoDeCambio.ObtenerTipoDeCambio(), N_PDF(tabla))) #Realiza el cambio de moneda
         B_cambio.place(x=250, y=500)
+
+        B_cambio_todas = Button(self.canvas, text="CAMBIAR TODAS", bg="cyan3", fg="black", command= Cambiar_Todas)  # Realiza el cambio de moneda a todas las facturas
+        B_cambio_todas.place(x=120, y=500)
 
         B_atras = Button(self.canvas, text="ATRÁS", bg="cyan3", fg="black", command=self.Menu)
         B_atras.place(x=450, y=500)
@@ -243,7 +255,7 @@ class Menu():
 
     def BuscarFactura(self):
 
-        #PANTALLA BUSCAR Y ELIMINAR FACTURAS
+        #PANTALLA BUSCAR
         
         self.canvas = Canvas(self.ventana, width=755, height=600,bg= "white",highlightbackground="White")
         self.canvas.place(x=-5, y=0)
@@ -574,6 +586,44 @@ class Menu():
         B_atras = Button(self.canvas,text = "ATRÁS",bg = "skyblue1",fg = "black", command = self.Menu)
         B_atras.place(x = 400,y = 490)
 
+    def EnviarCorreo(self):
+        self.canvas = Canvas(self.ventana, width=755, height=600, bg="White", highlightbackground="White")
+        self.canvas.place(x=-5, y=0)
+        self.seleccion = ""  # reinicia el valor seleccionado en la tabla
+
+        L_texto = Label(self.canvas, text="Enviar Correo", font=("fixedsys", "40"), bg="white")
+        L_texto.place(x=140, y=30)
+
+        D_canvas = Canvas(self.canvas, width=675, height=300, bg="PaleVioletRed1", highlightbackground="Black")
+        D_canvas.place(x=40, y=150)
+
+        encabezados = ["N°", "Cliente", "Monto"]
+        datos = Facturas.Mostrar_Todas()
+
+        tabla = ttk.Treeview(columns=encabezados, show="headings")
+        tabla.place(x=75, y=185)
+
+        # For de listbox
+        for encabezado in encabezados:
+            tabla.heading(encabezado, text=encabezado.title())
+        for dato in datos:
+            tabla.insert('', 'end', values=dato)
+
+        def seleccionar(seleccionado):  # Almacena el dato seleccionado de la tabla
+            self.seleccion = seleccionado.widget.selection()
+
+        def Enviar(tabla):  # Si se ha seleccionado una factura en la tabla, la elimina
+            if self.seleccion != "":
+                Correo(str(tabla.item(self.seleccion[0])['values'][0]))
+                self.EnviarCorreo()
+
+        tabla.bind('<<TreeviewSelect>>', seleccionar)
+
+        B_enviar = Button(self.canvas, text="Enviar Factura", bg="PaleVioletRed1", fg="black", command=lambda: Enviar(tabla))  # Elimina la factura seleccionada
+        B_enviar.place(x=275, y=500)
+
+        B_atras = Button(self.canvas, text="ATRÁS", bg="PaleVioletRed1", fg="black", command=self.Menu)
+        B_atras.place(x=400, y=500)
 
 # CREAR VENTANA DEL PROGRAMA
 ventana = Tk()
