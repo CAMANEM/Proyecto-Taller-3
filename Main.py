@@ -62,8 +62,6 @@ class Menu():
 
     def Registro(self):
 
-        #EL BOTON "FOTO" LO QUE HACE ES MANDARME AL MENU, LUEGO USTED LO CONFIGURA PARA QUE TOME LA FOTO Y LO MANDE AL MENU
-
         #PATANTALLA DE REGISTRO
 
         self.canvas = Canvas(self.ventana, width=755, height=600,bg= "White",highlightbackground="White")
