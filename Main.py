@@ -2,14 +2,13 @@ from Generador_Factura_PDF import Cambio_Moneda
 from Generador_Factura_PDF import Factura
 from Administrar_Facturas import Facturas
 from tipo_de_cambio import tipoDeCambio
-#from reconocimiento import camara
+from reconocimiento import camara
 from Servicios import servicios
 from tkinter import messagebox
 from EnviaCorreo import Correo
 import tkinter.ttk as ttk
 from tkinter import *
 import os
-#from recognition import Login
 
 class Menu():
 

@@ -1,5 +1,5 @@
 {
- "N\u00b0_Factura": "3",
+ "N\u00b0_Factura": "5",
  "Facturas": [
   {
    "N\u00b0_Factura": "1",
@@ -54,6 +54,97 @@
      },
      "6": {
       "descripcion": "gas",
+      "costo": "0"
+     }
+    }
+   },
+   "Subtotal": 0,
+   "Total": 0,
+   "Moneda": "S"
+  },
+  {
+   "N\u00b0_Factura": "4",
+   "Fecha": "09/08/2020",
+   "Vencimiento": "12/08/2020",
+   "Cliente": "El pichas",
+   "Cedula": "123456789",
+   "Direccion": "En tus ojos",
+   "Correo": "lujimenez2000@gmail.com",
+   "Servicios": [
+    {
+     "ID": "8",
+     "tipo": "Ver culos",
+     "cant": "2"
+    },
+    {
+     "ID": "8",
+     "tipo": "Ver culos",
+     "cant": "2"
+    },
+    {
+     "ID": "8",
+     "tipo": "Ver culos",
+     "cant": "2"
+    },
+    {
+     "ID": "8",
+     "tipo": "Ver culos",
+     "cant": "2"
+    },
+    {
+     "ID": "8",
+     "tipo": "Ver culos",
+     "cant": "2"
+    }
+   ],
+   "Costos": {
+    "Proximo_ID": "9",
+    "Servicios a facturar": [],
+    "ID_existentes": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "6",
+     "7",
+     "8"
+    ],
+    "Servicios": {
+     "1": {
+      "descripcion": "Tencha2",
+      "costo": "0"
+     },
+     "2": {
+      "descripcion": "asda",
+      "costo": "0"
+     },
+     "3": {
+      "descripcion": "Hacer comida",
+      "costo": "3"
+     },
+     "4": {
+      "descripcion": "Caviar Express",
+      "costo": "2078798"
+     },
+     "5": {
+      "descripcion": "Control de plagas",
+      "costo": "11"
+     },
+     "": {
+      "descripcion": "",
+      "costo": ""
+     },
+     "6": {
+      "descripcion": "gas",
+      "costo": "0"
+     },
+     "7": {
+      "descripcion": "Audi mas feo",
+      "costo": "5"
+     },
+     "8": {
+      "descripcion": "Ver culos",
       "costo": "0"
      }
     }

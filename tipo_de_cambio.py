@@ -9,7 +9,6 @@ class TipoDeCambio:
         #self.ObtenerTipoDeCambio()
 
     def ObtenerTipoDeCambio(self):
-        print("holi")
         """Solicita el tipo de cambio del dólar al banco central de Costa Rica
         return [compra, venta]"""
 
