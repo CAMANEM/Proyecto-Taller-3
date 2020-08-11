@@ -118,9 +118,9 @@ class Menu():
         Eliminar = Button(C_botones, text="ELIMINAR FACTURA", bg="medium turquoise", fg="black", font=("fixedsys", "20"),width = 18, command = self.EliminarFactura)
         Eliminar.grid(row=3, column=0,padx = 15, pady = 15)
 
-        TipoCambio = Button(C_botones, text="Tipo Cambio", bg="medium turquoise", fg="black", font=("fixedsys", "20"),width = 18, command=self.TipoCambio)
+        TipoCambio = Button(C_botones, text="TIPO DE CAMBIO", bg="medium turquoise", fg="black", font=("fixedsys", "20"),width = 18, command=self.TipoCambio)
         TipoCambio.grid(row=3, column=1,padx = 15, pady = 15)
-        TipoCambio = Button(C_botones, text="Enviar Correo", bg="medium turquoise", fg="black", font=("fixedsys", "20"), width=18, command=  self.EnviarCorreo)
+        TipoCambio = Button(C_botones, text="ENVIAR CORREO", bg="medium turquoise", fg="black", font=("fixedsys", "20"), width=18, command=  self.EnviarCorreo)
         TipoCambio.grid(row=4, column=0, padx=15, pady=15)
 
 

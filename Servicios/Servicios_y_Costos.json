@@ -1,52 +1,13 @@
 {
- "Proximo_ID": "9",
+ "Proximo_ID": "2",
  "Servicios a facturar": [],
  "ID_existentes": [
-  "1",
-  "2",
-  "3",
-  "4",
-  "5",
-  "6",
-  "7",
-  "8"
+  "1"
  ],
  "Servicios": {
   "1": {
-   "descripcion": "Tencha2",
-   "costo": "10"
-  },
-  "2": {
-   "descripcion": "asda",
-   "costo": "-1"
-  },
-  "3": {
-   "descripcion": "Hacer comida",
-   "costo": "2000"
-  },
-  "4": {
-   "descripcion": "Caviar Express",
-   "costo": "1222333444"
-  },
-  "5": {
-   "descripcion": "Control de plagas",
-   "costo": "7000"
-  },
-  "": {
-   "descripcion": "",
-   "costo": ""
-  },
-  "6": {
-   "descripcion": "gas",
-   "costo": "100"
-  },
-  "7": {
-   "descripcion": "Audi mas feo",
-   "costo": "3213"
-  },
-  "8": {
-   "descripcion": "Ver culos",
-   "costo": "25"
+   "descripcion": "Hacer tercer proyecto de taller",
+   "costo": "2500"
   }
  }
 }
